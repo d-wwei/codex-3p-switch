@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 3P Switch"
+  short_description: "Switch Codex Desktop and CLI between official and 3P modes."
+  default_prompt: "Use $codex-3p-switch to configure or switch Codex Desktop and CLI provider modes."
