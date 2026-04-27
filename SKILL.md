@@ -9,6 +9,8 @@ description: Use when local Codex needs shareable Desktop and CLI mode switching
 
 This skill standardizes local Codex provider switching with eight shell commands. It separates Desktop mode from CLI mode, so the app and terminal can follow different providers when needed.
 
+In Claude Code, invoke it as `/codex-3p-switch <command>`. In Codex, invoke it as `$codex-3p-switch`.
+
 ## Commands
 
 - `codex-os-mode`

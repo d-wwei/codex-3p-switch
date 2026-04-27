@@ -5,6 +5,7 @@ Shareable provider switching for Codex Desktop and Codex CLI.
 It installs:
 
 - a Codex skill: `$codex-3p-switch`
+- a Claude Code skill: `/codex-3p-switch`
 - a provider-mode controller script
 - a `codex` wrapper so CLI mode can differ from Desktop mode
 - eight shell commands:
@@ -57,7 +58,7 @@ Install:
 ```bash
 git clone https://github.com/d-wwei/codex-3p-switch.git
 cd codex-3p-switch
-./scripts/install.sh
+./install.sh
 ```
 
 Open a new shell, then check state:
@@ -89,7 +90,7 @@ codex-os-mode
 ```bash
 git clone https://github.com/d-wwei/codex-3p-switch.git
 cd codex-3p-switch
-./scripts/install.sh
+./install.sh
 ```
 
 After install, open a new shell and run:
@@ -103,6 +104,40 @@ If you want to configure a third-party gateway:
 ```bash
 codex-3p-config
 ```
+
+Check install state:
+
+```bash
+./install.sh status
+```
+
+Remove all registered skill links and terminal commands:
+
+```bash
+./install.sh uninstall
+```
+
+## Native Skill Use
+
+### Codex
+
+Use the skill by name:
+
+```text
+$codex-3p-switch
+```
+
+### Claude Code
+
+Use the skill by slash command:
+
+```text
+/codex-3p-switch mode-status
+/codex-3p-switch 3p-config
+/codex-3p-switch app-os-mode
+```
+
+The skill itself tells the agent to use the installed shell commands. That means Claude Code and direct terminal use share the same backend behavior.
 
 ## Command Reference
 
@@ -128,6 +163,7 @@ Official mode does not pin a model by default. The managed official profile omit
 - Third-party gateway settings are stored in a managed block inside `~/.codex/config.toml`.
 - Third-party secrets can be written to `~/.codex/provider-modes/third-party.env`.
 - Desktop support for third-party credentials uses `launchctl setenv` so GUI apps can inherit the env var.
+- `./install.sh` registers the repository itself as a native skill for Claude Code and Codex, and then installs the terminal commands.
 
 ## FAQ
 
