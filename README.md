@@ -139,6 +139,38 @@ Use the skill by slash command:
 
 The skill itself tells the agent to use the installed shell commands. That means Claude Code and direct terminal use share the same backend behavior.
 
+## Platform Examples
+
+### Terminal
+
+```bash
+codex-mode-status
+codex-3p-config
+codex-3p-mode
+codex-app-os-mode
+codex-cli-3p-mode
+```
+
+### Codex
+
+```text
+$codex-3p-switch
+$codex-3p-switch mode-status
+$codex-3p-switch 3p-config
+$codex-3p-switch os-mode
+$codex-3p-switch cli-3p-mode
+```
+
+### Claude Code
+
+```text
+/codex-3p-switch mode-status
+/codex-3p-switch 3p-config
+/codex-3p-switch 3p-mode
+/codex-3p-switch app-os-mode
+/codex-3p-switch cli-3p-mode
+```
+
 ## Command Reference
 
 | Command | Effect |
